@@ -6,13 +6,15 @@
     <title>Login</title>
 
     <style>
+
+        /* Defaults */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
             height: 100vh;
             display: flex;
@@ -26,6 +28,7 @@
             );
         }
 
+        /* Login Form */
         .login-container {
             width: 360px;
             padding: 2rem;
@@ -40,6 +43,7 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
 
+        /* Background Decoration */
         .login-container::before {
             content: "♻";
             position: absolute;
@@ -51,7 +55,6 @@
             opacity: 0.15;
             transform: rotate(15deg);
         }
-
         .login-container::after {
             content: "🗑";
             position: absolute;
@@ -62,6 +65,7 @@
             opacity: 0.12;
         }
 
+        /* Title */
         h1 {
             color: #2e4f3a;
             margin-bottom: 1.5rem;
@@ -69,6 +73,7 @@
             font-weight: 700;
         }
 
+        /* Inputs */
         input {
             width: 100%;
             padding: 12px 14px;
@@ -89,6 +94,7 @@
             box-shadow: 0 0 0 4px rgba(111, 143, 114, 0.2);
         }
 
+        /* Login Button */
         button {
             width: 100%;
             padding: 12px;
@@ -114,11 +120,15 @@
         button:active {
             transform: translateY(0);
         }
+
     </style>
 </head>
+
 <body>
 
-<!-- Back button -->
+<!-- =========================
+     BACK BUTTON (INLINE STYLES)
+========================= -->
 <button
     onclick="location.href='index.html'"
     style="
@@ -144,28 +154,31 @@
 >
     ← Back
 </button>
-    
-    <div class="login-container">
-        <h1>Login</h1>
 
-        <input
-            id="loginEmail"
-            type="email"
-            placeholder="Email"
-        >
+<div class="login-container">
 
-        <input
-            id="loginPassword"
-            type="password"
-            placeholder="Password"
-        >
+    <h1>Login</h1>
 
-        <button id="loginBtn">
-            Login
-        </button>
-    </div>
+    <input
+        id="loginEmail"
+        type="email"
+        placeholder="Email"
+    >
 
-    <script type="module" src="app.js"></script>
+    <input
+        id="loginPassword"
+        type="password"
+        placeholder="Password"
+    >
+
+    <button id="loginBtn">
+        Login
+    </button>
+
+</div>
+
+<!-- external JS logic -->
+<script type="module" src="app.js"></script>
 
 </body>
 </html>
