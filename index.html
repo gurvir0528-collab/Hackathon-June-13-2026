@@ -106,10 +106,9 @@
             font-size: 2rem;
         }
 
-        /* unified button size */
         .main-btn {
             width: 100%;
-            height: 52px; /* 👈 ensures same size */
+            height: 52px;
             border: none;
             border-radius: 14px;
             font-size: 1.05rem;
@@ -127,7 +126,6 @@
             transform: translateY(-3px);
         }
 
-        /* Play */
         .play-btn {
             background: #2e4f3a;
             color: white;
@@ -137,7 +135,6 @@
             background: #3a6349;
         }
 
-        /* How to Play (muted) */
         .how-btn {
             background: #5f7f6a;
             color: white;
@@ -148,14 +145,54 @@
             background: #6a8d76;
         }
 
-        /* Leaderboard (gold standout) */
+        /* ⭐ UPDATED LEADERBOARD BUTTON (GOLD + GLOW + SHINE) */
         .leaderboard-btn {
-            background: linear-gradient(135deg, #d4af37, #f1d36b);
+            background: linear-gradient(135deg, #f5d76e, #d4af37);
             color: #2e2e2e;
+            font-weight: 800;
+
+            box-shadow:
+                0 0 10px rgba(212, 175, 55, 0.45),
+                0 0 25px rgba(212, 175, 55, 0.25);
+
+            position: relative;
+            overflow: hidden;
         }
 
         .leaderboard-btn:hover {
-            filter: brightness(1.05);
+            filter: brightness(1.08);
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 14px rgba(212, 175, 55, 0.65),
+                0 0 35px rgba(212, 175, 55, 0.35);
+        }
+
+        .leaderboard-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent
+            );
+
+            transform: skewX(-20deg);
+        }
+
+        .leaderboard-btn:hover::before {
+            animation: shine 0.9s ease forwards;
+        }
+
+        @keyframes shine {
+            0% { left: -75%; }
+            100% { left: 125%; }
         }
 
         .leaderboard-space {
