@@ -104,10 +104,74 @@
             font-weight: 600;
             color: #6f8f72;
         }
+
+        /* Back button */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+
+            color: white;
+            background: rgba(46, 79, 58, 0.9);
+
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .back-btn:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
+
+        /* Auth buttons (NEW) */
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .auth-buttons button {
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            background: rgba(46, 79, 58, 0.9);
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .auth-buttons button:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Back button -->
+    <button class="back-btn" onclick="location.href='index.html'">
+        ← Back
+    </button>
+
+    <!-- Auth buttons -->
+    <div class="auth-buttons">
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='signup.html'">Sign Up</button>
+    </div>
 
     <div class="leaderboard-container">
 
