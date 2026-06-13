@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bao Buism</title>
+    <title>Street Sweeper</title>
 
     <style>
+
+        /* Defaults */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
             height: 100vh;
             background: linear-gradient(135deg, #2e4f3a, #6f8f72);
@@ -23,6 +25,7 @@
             overflow: hidden;
         }
 
+        /* Background Decoration */
         body::before,
         body::after {
             position: absolute;
@@ -53,6 +56,7 @@
             opacity: 0.25;
         }
 
+        /* Login & Signup Buttons */
         .auth-buttons {
             position: absolute;
             top: 20px;
@@ -79,6 +83,7 @@
             transform: translateY(-2px);
         }
 
+        /* Main Content */
         .container {
             width: 380px;
             padding: 2.5rem;
@@ -100,12 +105,14 @@
             transform: rotate(15deg);
         }
 
+        /* Title */
         h1 {
             color: #2e4f3a;
             margin-bottom: 1.5rem;
             font-size: 2rem;
         }
 
+        /* Standard button */
         .main-btn {
             width: 100%;
             height: 52px;
@@ -126,6 +133,7 @@
             transform: translateY(-3px);
         }
 
+        /* Play button */
         .play-btn {
             background: #2e4f3a;
             color: white;
@@ -135,6 +143,7 @@
             background: #3a6349;
         }
 
+        /* How2play Button */
         .how-btn {
             background: #5f7f6a;
             color: white;
@@ -145,7 +154,7 @@
             background: #6a8d76;
         }
 
-        /* ⭐ UPDATED LEADERBOARD BUTTON (GOLD + GLOW + SHINE) */
+        /* Leaderboard button */
         .leaderboard-btn {
             background: linear-gradient(135deg, #f5d76e, #d4af37);
             color: #2e2e2e;
@@ -198,18 +207,22 @@
         .leaderboard-space {
             height: 18px;
         }
+
     </style>
 </head>
 
 <body>
 
+    <!-- background decoration -->
     <div class="recycle-icon">♻️</div>
 
+    <!-- login and signup buttons -->
     <div class="auth-buttons">
         <button onclick="location.href='login.html'">Login</button>
         <button onclick="location.href='signup.html'">Sign Up</button>
     </div>
 
+    <!-- main menu -->
     <div class="container">
         <h1>Bao Buism</h1>
 
