@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play - Bao Buism</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #2e4f3a, #6f8f72);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* background symbols */
+        body::before,
+        body::after {
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.06;
+            z-index: 0;
+        }
+
+        body::before {
+            content: "♻";
+            top: 10%;
+            left: 8%;
+            transform: rotate(-15deg);
+        }
+
+        body::after {
+            content: "🗑";
+            bottom: 12%;
+            right: 10%;
+            transform: rotate(12deg);
+        }
+
+        .bg-symbol {
+            position: absolute;
+            font-size: 6rem;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-symbol.recycle {
+            top: 65%;
+            left: 15%;
+            transform: rotate(20deg);
+        }
+
+        .bg-symbol.trash {
+            top: 25%;
+            right: 18%;
+            transform: rotate(-25deg);
+        }
+
+        /* Top-right auth buttons */
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .auth-buttons button {
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            background: rgba(46, 79, 58, 0.9);
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .auth-buttons button:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
+
+        /* Back button */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            background: rgba(46, 79, 58, 0.9);
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+
+        .back-btn:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
+
+        /* Main container */
+        .container {
+            width: 520px;
+            padding: 2.5rem;
+            background: #f5efdc;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .container::before {
+            content: "♻";
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 5rem;
+            opacity: 0.10;
+            transform: rotate(15deg);
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2e4f3a;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: #6f8f72;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .content {
+            text-align: left;
+            background: rgba(255,255,255,0.7);
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(216,195,165,0.6);
+            line-height: 1.6;
+            color: #2e4f3a;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- background symbols -->
+    <div class="bg-symbol recycle">♻</div>
+    <div class="bg-symbol trash">🗑</div>
+
+    <!-- back button (NOW CORRECT) -->
+    <button class="back-btn" onclick="location.href='index.html'">
+        ← Back
+    </button>
+
+    <!-- auth buttons (NOW CORRECT LINKS) -->
+    <div class="auth-buttons">
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='signup.html'">Sign Up</button>
+    </div>
+
+    <!-- main content -->
+    <div class="container">
+
+        <div class="title">How to Play</div>
+        <div class="subtitle">Learn the basics of Bao Buism</div>
+
+        <div class="content">
+            Welcome to <b>Bao Buism</b>, a competitive recycling-inspired game where strategy and timing matter.  
+            <br><br>
+            Your goal is to collect, sort, and optimize waste management decisions while competing against other players on the leaderboard.  
+            <br><br>
+            Each round presents you with different types of items. Choose wisely — correct decisions earn points, while mistakes reduce your efficiency score.  
+            <br><br>
+            As you progress, the pace increases and the decisions become more complex. Mastering patterns and reacting quickly is key to climbing the ranks.  
+            <br><br>
+            Good luck, and remember: every choice impacts your final score.
+        </div>
+
+    </div>
+
+</body>
+</html>
