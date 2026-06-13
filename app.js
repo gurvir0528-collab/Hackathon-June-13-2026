@@ -75,20 +75,20 @@ intructionsBtn?.addEventListener("click", async () => {
     let command = null;
     let value = null;
 
-    if(instruction.toLowerCase().startsWith("move")){
-        if(instruction.includes("steps")) {
+    if(instruction.toLowerCase().startsWith("moveforward(")){
+        if(instruction.includes(")")) {
             const nums = instruction.match(/-?\d+/g);
             if(!nums){
                 alert("No Number Was Found")
                 return;
             }
             value = parseInt(nums[0]);
-            command = `move_${value}_steps`;
+            command = `move_${value}`;
         }
     
-     } else if (instruction.toLowerCase().startsWith("turn")) {
+     } else if (instruction.toLowerCase().startsWith("turn(")) {
 
-        if (instruction.includes("degree")) {
+        if (instruction.includes(")")) {
 
             const nums = instruction.match(/-?\d+/g);
             if (!nums) {
@@ -97,7 +97,7 @@ intructionsBtn?.addEventListener("click", async () => {
             }
 
             value = parseInt(nums[0]);
-            command = `turn_${value}_degrees`;
+            command = `turn_${value}`;
         }
 
     }
