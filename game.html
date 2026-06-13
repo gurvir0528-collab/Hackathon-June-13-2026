@@ -4,11 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #2e4f3a,
+                #6f8f72
+            );
+        }
+
+        .play-container {
+            width: 420px;
+            padding: 28px;
+
+            background: #f5efdc;
+            border-radius: 20px;
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-container::before {
+            content: "♻";
+            position: absolute;
+            top: -10px;
+            right: -8px;
+
+            font-size: 4rem;
+            color: #6f8f72;
+            opacity: 0.12;
+            transform: rotate(15deg);
+        }
+
+        .play-container::after {
+            content: "🗑";
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+
+            font-size: 2.5rem;
+            opacity: 0.08;
+        }
+
+        h2 {
+            color: #2e4f3a;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #8b7155;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+
+            padding: 12px;
+
+            border: 2px solid #d8c3a5;
+            border-radius: 12px;
+
+            background: white;
+
+            font-size: 0.95rem;
+            line-height: 1.5;
+
+            resize: none;
+            outline: none;
+
+            transition: all 0.25s ease;
+        }
+
+        textarea:focus {
+            border-color: #6f8f72;
+            box-shadow: 0 0 0 4px rgba(111, 143, 114, 0.2);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 14px;
+            padding: 11px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #2e4f3a;
+            color: white;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            background: #3a6349;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <h2>Robot Instructions</h2>
-    <input id = "playInstructions" placeholder = "E.g move 5 steps;">
-    <button id = "instructionsInput">Send!</button>
+
+    <div class="play-container">
+        <h2>Robot Instructions</h2>
+
+        <p class="description">
+            Enter commands for the trash collection robot.
+        </p>
+
+        <textarea
+    id="playInstructions"
+    placeholder="Example:
+Move forward 5 steps
+Turn right
+Pick up trash"></textarea>
+
+        <button id="instructionsInput">
+            Send Instructions
+        </button>
+    </div>
+
     <script type="module" src="app.js"></script>
+
 </body>
 </html>
