@@ -4,12 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #2e4f3a,
+                #6f8f72
+            );
+        }
+
+        .signup-container {
+            width: 360px;
+            padding: 2rem;
+
+            background: #f5efdc;
+            border-radius: 20px;
+
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .signup-container::before {
+            content: "♻";
+            position: absolute;
+            top: -15px;
+            right: -10px;
+
+            font-size: 5rem;
+            color: #6f8f72;
+            opacity: 0.15;
+            transform: rotate(15deg);
+        }
+
+        .signup-container::after {
+            content: "🗑";
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+
+            font-size: 3rem;
+            opacity: 0.12;
+        }
+
+        h1 {
+            color: #2e4f3a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 1rem;
+
+            border: 2px solid #d8c3a5;
+            border-radius: 12px;
+
+            background: white;
+            font-size: 1rem;
+
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #6f8f72;
+            box-shadow: 0 0 0 4px rgba(111, 143, 114, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #2e4f3a;
+            color: white;
+
+            font-size: 1rem;
+            font-weight: 600;
+
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <input id = "signupEmail" placeholder = "Email">
-    <input id = "signupPassword" placeholder = "Password">
-    <button id="signupBtn">Sign Up</button>
+
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+
+        <input
+            id="signupEmail"
+            type="email"
+            placeholder="Email"
+        >
+
+        <input
+            id="signupPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button id="signupBtn">
+            Sign Up
+        </button>
+    </div>
+
     <script type="module" src="app.js"></script>
+
 </body>
 </html>
