@@ -6,13 +6,15 @@
     <title>Sign Up</title>
 
     <style>
+
+        /* Defaults */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
             height: 100vh;
             display: flex;
@@ -26,6 +28,7 @@
             );
         }
 
+        /* Signup Form */
         .signup-container {
             width: 360px;
             padding: 2rem;
@@ -40,6 +43,7 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
 
+        /* Background Decoration */
         .signup-container::before {
             content: "♻";
             position: absolute;
@@ -51,7 +55,7 @@
             opacity: 0.15;
             transform: rotate(15deg);
         }
-
+        
         .signup-container::after {
             content: "🗑";
             position: absolute;
@@ -62,6 +66,7 @@
             opacity: 0.12;
         }
 
+        /* Title */
         h1 {
             color: #2e4f3a;
             margin-bottom: 1.5rem;
@@ -69,6 +74,7 @@
             font-weight: 700;
         }
 
+        /* Inputs */
         input {
             width: 100%;
             padding: 12px 14px;
@@ -84,11 +90,13 @@
             transition: all 0.3s ease;
         }
 
+        /* focus effect for inputs */
         input:focus {
             border-color: #6f8f72;
             box-shadow: 0 0 0 4px rgba(111, 143, 114, 0.2);
         }
 
+        /* Signup Button */
         button {
             width: 100%;
             padding: 12px;
@@ -105,7 +113,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         button:hover {
             background: #3a6349;
             transform: translateY(-2px);
@@ -114,11 +121,13 @@
         button:active {
             transform: translateY(0);
         }
+
     </style>
 </head>
+
 <body>
 
-    <!-- Back button -->
+<!-- Back Button -->
 <button
     onclick="location.href='index.html'"
     style="
@@ -145,27 +154,30 @@
     ← Back
 </button>
 
-    <div class="signup-container">
-        <h1>Sign Up</h1>
+<div class="signup-container">
 
-        <input
-            id="signupEmail"
-            type="email"
-            placeholder="Email"
-        >
+    <h1>Sign Up</h1>
 
-        <input
-            id="signupPassword"
-            type="password"
-            placeholder="Password"
-        >
+    <input
+        id="signupEmail"
+        type="email"
+        placeholder="Email"
+    >
 
-        <button id="signupBtn">
-            Sign Up
-        </button>
-    </div>
+    <input
+        id="signupPassword"
+        type="password"
+        placeholder="Password"
+    >
 
-    <script type="module" src="app.js"></script>
+    <button id="signupBtn">
+        Sign Up
+    </button>
+
+</div>
+
+<!-- external JS -->
+<script type="module" src="app.js"></script>
 
 </body>
 </html>
