@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Bao Buism</title>
 
     <style>
         * {
@@ -20,9 +20,39 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden;
         }
 
-        /* Top-right auth buttons */
+        body::before,
+        body::after {
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        body::before {
+            content: "♻️";
+            top: 10%;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+
+        body::after {
+            content: "🗑️";
+            bottom: 10%;
+            right: 10%;
+            transform: rotate(12deg);
+        }
+
+        .recycle-icon {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            font-size: 2rem;
+            opacity: 0.25;
+        }
+
         .auth-buttons {
             position: absolute;
             top: 20px;
@@ -49,7 +79,6 @@
             transform: translateY(-2px);
         }
 
-        /* Main leaderboard container */
         .container {
             width: 380px;
             padding: 2.5rem;
@@ -62,7 +91,7 @@
         }
 
         .container::before {
-            content: "🏆";
+            content: "♻️";
             position: absolute;
             top: -20px;
             right: -10px;
@@ -77,53 +106,88 @@
             font-size: 2rem;
         }
 
-        /* Big leaderboard button */
-        .leaderboard-btn {
+        /* unified button size */
+        .main-btn {
             width: 100%;
-            padding: 18px;
+            height: 52px; /* 👈 ensures same size */
             border: none;
             border-radius: 14px;
-            background: #2e4f3a;
-            color: white;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .leaderboard-btn:hover {
-            background: #3a6349;
+        .main-btn:hover {
             transform: translateY(-3px);
         }
 
-        .leaderboard-btn:active {
-            transform: translateY(0);
+        /* Play */
+        .play-btn {
+            background: #2e4f3a;
+            color: white;
         }
 
-        .subtitle {
-            margin-bottom: 1.5rem;
-            color: #6f8f72;
-            font-size: 0.95rem;
+        .play-btn:hover {
+            background: #3a6349;
+        }
+
+        /* How to Play (muted) */
+        .how-btn {
+            background: #5f7f6a;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .how-btn:hover {
+            background: #6a8d76;
+        }
+
+        /* Leaderboard (gold standout) */
+        .leaderboard-btn {
+            background: linear-gradient(135deg, #d4af37, #f1d36b);
+            color: #2e2e2e;
+        }
+
+        .leaderboard-btn:hover {
+            filter: brightness(1.05);
+        }
+
+        .leaderboard-space {
+            height: 18px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Small auth buttons -->
+    <div class="recycle-icon">♻️</div>
+
     <div class="auth-buttons">
         <button onclick="location.href='login.html'">Login</button>
         <button onclick="location.href='signup.html'">Sign Up</button>
     </div>
 
-    <!-- Main leaderboard CTA -->
     <div class="container">
-        <h1>Welcome</h1>
-        <p class="subtitle">See how you rank against others</p>
+        <h1>Bao Buism</h1>
 
-        <button class="leaderboard-btn" onclick="location.href='leaderboard.html'">
-            View Leaderboard
+        <button class="main-btn play-btn" onclick="location.href='game.html'">
+            Play
+        </button>
+
+        <button class="main-btn how-btn" onclick="location.href='howto.html'">
+            How to Play
+        </button>
+
+        <div class="leaderboard-space"></div>
+
+        <button class="main-btn leaderboard-btn" onclick="location.href='leaderboard.html'">
+            🏆 View Leaderboard
         </button>
     </div>
 
