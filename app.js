@@ -5,10 +5,23 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
+async function updateCommand(command){
+    const {error} = await supabaseClient
+    .from("robot commands")
+    .update({command: command})
+    .eq("id", 1);
+
+    if(error){
+        alert(error.message);
+        return;
+    } 
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const loginBtn = document.getElementById("loginBtn");
   const signupBtn = document.getElementById("signupBtn");
+  const intructionsBtn = document.getElementById("instructionsInput")
 
   loginBtn?.addEventListener("click", async () => {
 
@@ -50,4 +63,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+intructionsBtn?.addEventListener("click", async () => {
+
+    const instruction = document.getElementById("playInstructions").value.trim();
+
+    if (!instruction.endsWith(";")) {
+        alert("Command must end with ;");
+        return;
+    }
+
+    let command = null;
+    let value = null;
+
+    if(instruction.toLowerCase().startsWith("move")){
+        if(instruction.includes("steps")) {
+            const nums = instruction.match(/-?\d+/g);
+            if(!nums){
+                alert("No Number Was Found")
+                return;
+            }
+            value = parseInt(nums[0]);
+            command = `move_${value}_steps`;
+        }
+    
+     } else if (instruction.toLowerCase().startsWith("turn")) {
+
+        if (instruction.includes("degree")) {
+
+            const nums = instruction.match(/-?\d+/g);
+            if (!nums) {
+                alert("No number found!");
+                return;
+            }
+
+            value = parseInt(nums[0]);
+            command = `turn_${value}_degrees`;
+        }
+
+    }
+    if (command === null) {
+        alert("Invalid command format");
+        return;
+    }
+    updateCommand(command);
+    console.log("command =", command);
+    console.log("value =", value);
+    document.getElementById("playInstructions").value=""
+    
+
+    });
 });
