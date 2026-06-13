@@ -27,6 +27,58 @@
             );
         }
 
+        /* TOP LEFT + TOP RIGHT */
+        .top-left,
+        .top-right {
+            position: absolute;
+            top: 20px;
+            z-index: 10;
+        }
+
+        .top-left {
+            left: 20px;
+        }
+
+        .top-right {
+            right: 20px;
+        }
+
+        .top-left button,
+        .top-right button {
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Back button */
+        .back-btn {
+            color: white;
+            background: rgba(46, 79, 58, 0.9);
+        }
+
+        .back-btn:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
+
+        /* Leaderboard button */
+        .leaderboard-btn {
+            color: #2e4f3a;
+            background: linear-gradient(135deg, #f5d76e, #d4af37);
+            font-weight: 700;
+        }
+
+        .leaderboard-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+
+        /* MAIN CARD */
         .play-container {
             width: 420px;
             padding: 28px;
@@ -70,12 +122,6 @@
         }
 
         .description {
-            color: #8b7155;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            margin-bottom: 16px;
-        }
-        .message {
             color: #8b7155;
             font-size: 0.9rem;
             line-height: 1.4;
@@ -135,7 +181,22 @@
         }
     </style>
 </head>
+
 <body>
+
+    <!-- TOP LEFT -->
+    <div class="top-left">
+        <button class="back-btn" onclick="location.href='index.html'">
+            ← Back
+        </button>
+    </div>
+
+    <!-- TOP RIGHT -->
+    <div class="top-right">
+        <button class="leaderboard-btn" onclick="location.href='leaderboard.html'">
+            🏆 Leaderboard
+        </button>
+    </div>
 
     <div class="play-container">
         <h2>Robot Instructions</h2>
@@ -145,15 +206,16 @@
         </p>
 
         <textarea
-    id="playInstructions"
-    placeholder="Example:
+            id="playInstructions"
+            placeholder="Example:
 moveForward(10);
 turn(90);"></textarea>
 
         <button id="instructionsInput">
             Send Instructions
         </button>
-        <p id = "message" class = description></p>
+
+        <p id="message" class="description"></p>
     </div>
 
     <script type="module" src="app.js"></script>
