@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Play - Bao Buism</title>
+    <title>How to Play - Street Sweeper</title>
 
     <style>
+
+        /* defaults */
         * {
             margin: 0;
             padding: 0;
@@ -13,6 +15,7 @@
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* background */
         body {
             height: 100vh;
             background: linear-gradient(135deg, #2e4f3a, #6f8f72);
@@ -22,8 +25,7 @@
             position: relative;
             overflow: hidden;
         }
-
-        /* background symbols */
+        
         body::before,
         body::after {
             position: absolute;
@@ -46,6 +48,7 @@
             transform: rotate(12deg);
         }
 
+        /* Additional floating background icons */
         .bg-symbol {
             position: absolute;
             font-size: 6rem;
@@ -66,7 +69,7 @@
             transform: rotate(-25deg);
         }
 
-        /* Top-right auth buttons */
+        /* Login and Signup Buttons */
         .auth-buttons {
             position: absolute;
             top: 20px;
@@ -94,7 +97,7 @@
             transform: translateY(-2px);
         }
 
-        /* Back button */
+        /* Back Button */
         .back-btn {
             position: absolute;
             top: 20px;
@@ -117,7 +120,7 @@
             transform: translateY(-2px);
         }
 
-        /* Main container */
+        /* Main Content */
         .container {
             width: 520px;
             padding: 2.5rem;
@@ -140,6 +143,7 @@
             transform: rotate(15deg);
         }
 
+        /* Title */
         .title {
             font-size: 2.2rem;
             font-weight: 700;
@@ -154,6 +158,7 @@
             font-size: 0.95rem;
         }
 
+        /* Paragraph */
         .content {
             text-align: left;
             background: rgba(255,255,255,0.7);
@@ -164,42 +169,39 @@
             color: #2e4f3a;
             font-size: 0.95rem;
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- background symbols -->
+    <!-- background decoration -->
     <div class="bg-symbol recycle">♻</div>
     <div class="bg-symbol trash">🗑</div>
 
-    <!-- back button (NOW CORRECT) -->
+    <!-- back button -->
     <button class="back-btn" onclick="location.href='index.html'">
         ← Back
     </button>
 
-    <!-- auth buttons (NOW CORRECT LINKS) -->
+    <!-- loging & signup buttons -->
     <div class="auth-buttons">
         <button onclick="location.href='login.html'">Login</button>
         <button onclick="location.href='signup.html'">Sign Up</button>
     </div>
 
-    <!-- main content -->
+    <!-- main content box -->
     <div class="container">
 
+        <!-- title -->
         <div class="title">How to Play</div>
         <div class="subtitle">Learn the basics of Bao Buism</div>
 
+        <!-- instructions  -->
         <div class="content">
-            Welcome to <b>Bao Buism</b>, a competitive recycling-inspired game where strategy and timing matter.  
-            <br><br>
-            Your goal is to collect, sort, and optimize waste management decisions while competing against other players on the leaderboard.  
-            <br><br>
-            Each round presents you with different types of items. Choose wisely — correct decisions earn points, while mistakes reduce your efficiency score.  
-            <br><br>
-            As you progress, the pace increases and the decisions become more complex. Mastering patterns and reacting quickly is key to climbing the ranks.  
-            <br><br>
-            Good luck, and remember: every choice impacts your final score.
+            <b>street sweeper</b>
+            <br>
+            insert smt here
         </div>
 
     </div>
