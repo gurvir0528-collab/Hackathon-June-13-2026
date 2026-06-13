@@ -6,9 +6,7 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
 
-// ----------------------
 // UPDATE ROBOT COMMAND
-// ----------------------
 async function updateCommand(command) {
     const { error } = await supabaseClient
         .from("robot commands")
@@ -64,9 +62,7 @@ async function loadLeaderboard() {
 }
 
 
-// ----------------------
 // DOM READY
-// ----------------------
 document.addEventListener("DOMContentLoaded", () => {
 
     const loginBtn = document.getElementById("loginBtn");
@@ -74,9 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const instructionsBtn = document.getElementById("instructionsInput");
 
 
-    // ----------------------
     // LOGIN
-    // ----------------------
     loginBtn?.addEventListener("click", async () => {
 
         const email = document.getElementById("loginEmail").value;
@@ -99,9 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ----------------------
     // SIGNUP + PROFILE CREATION
-    // ----------------------
     signupBtn?.addEventListener("click", async () => {
 
         const email = document.getElementById("signupEmail").value;
@@ -136,9 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ----------------------
     // ROBOT INSTRUCTIONS
-    // ----------------------
     instructionsBtn?.addEventListener("click", async () => {
 
         const message = document.getElementById("message");
