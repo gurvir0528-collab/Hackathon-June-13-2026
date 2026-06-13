@@ -6,6 +6,9 @@
     <title>Leaderboard</title>
 
     <style>
+
+        /* Defaults */
+        
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +28,7 @@
                 #6f8f72
             );
         }
-
+       /* Main Content */
         .leaderboard-container {
             width: 420px;
             padding: 2rem;
@@ -39,7 +42,7 @@
 
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
-
+        /* Background Decoration */
         .leaderboard-container::before {
             content: "🏆";
             position: absolute;
@@ -60,7 +63,7 @@
             font-size: 3rem;
             opacity: 0.12;
         }
-
+        /* Text & player placard */
         h2 {
             color: #2e4f3a;
             margin-bottom: 1.5rem;
@@ -130,7 +133,7 @@
             transform: translateY(-2px);
         }
 
-        /* Auth buttons (NEW) */
+        /* Login & Signup Buttons */
         .auth-buttons {
             position: absolute;
             top: 20px;
@@ -167,7 +170,7 @@
         ← Back
     </button>
 
-    <!-- Auth buttons -->
+    <!-- Login/Signup buttons -->
     <div class="auth-buttons">
         <button onclick="location.href='login.html'">Login</button>
         <button onclick="location.href='signup.html'">Sign Up</button>
