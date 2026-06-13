@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #2e4f3a, #6f8f72);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Top-right auth buttons */
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            background: rgba(46, 79, 58, 0.9);
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .auth-buttons button:hover {
+            background: #3a6349;
+            transform: translateY(-2px);
+        }
+
+        /* Main leaderboard container */
+        .container {
+            width: 380px;
+            padding: 2.5rem;
+            background: #f5efdc;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .container::before {
+            content: "🏆";
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 5rem;
+            opacity: 0.12;
+            transform: rotate(15deg);
+        }
+
+        h1 {
+            color: #2e4f3a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        /* Big leaderboard button */
+        .leaderboard-btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 14px;
+            background: #2e4f3a;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .leaderboard-btn:hover {
+            background: #3a6349;
+            transform: translateY(-3px);
+        }
+
+        .leaderboard-btn:active {
+            transform: translateY(0);
+        }
+
+        .subtitle {
+            margin-bottom: 1.5rem;
+            color: #6f8f72;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Small auth buttons -->
+    <div class="auth-buttons">
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='signup.html'">Sign Up</button>
+    </div>
+
+    <!-- Main leaderboard CTA -->
+    <div class="container">
+        <h1>Welcome</h1>
+        <p class="subtitle">See how you rank against others</p>
+
+        <button class="leaderboard-btn" onclick="location.href='leaderboard.html'">
+            View Leaderboard
+        </button>
+    </div>
+
+</body>
+</html>
