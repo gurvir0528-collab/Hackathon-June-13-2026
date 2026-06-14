@@ -9,7 +9,7 @@ const supabaseClient = createClient(supabaseUrl, supabaseKey);
 // UPDATE ROBOT COMMAND
 async function updateCommand(command) {
     const { error } = await supabaseClient
-        .from("robot commands")
+        .from("commands")
         .update({ command })
         .eq("id", 1);
 
