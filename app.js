@@ -10,7 +10,10 @@ const supabaseClient = createClient(supabaseUrl, supabaseKey);
 async function updateCommand(command) {
     const { error } = await supabaseClient
         .from("commands")
-        .update({ command })
+        .update({
+            command: command,
+            processed: false   // 🔥 THIS IS THE IMPORTANT FIX
+        })
         .eq("id", 1);
 
     if (error) {
