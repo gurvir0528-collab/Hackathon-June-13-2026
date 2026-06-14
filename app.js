@@ -12,7 +12,7 @@ async function updateCommand(command) {
         .from("commands")
         .update({
             command: command,
-            processed: false   // 🔥 THIS IS THE IMPORTANT FIX
+            processed: false   
         })
         .eq("id", 1);
 
