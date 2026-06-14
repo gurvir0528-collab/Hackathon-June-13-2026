@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- scales for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play</title>
 
     <style>
-        /* Reset default spacing + set global font */
         * {
             margin: 0;
             padding: 0;
@@ -15,17 +13,21 @@
             font-family: -apple-system, BlinkMacSystemFont,
                          "Segoe UI", sans-serif;
         }
+
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
 
-            /* Background gradient */
-            background: linear-gradient(135deg, #2e4f3a, #6f8f72);
-        }
+            padding-top: 90px;
+            padding-bottom: 30px;
+            gap: 18px;
 
-        /* Top buttons */
+    		background: linear-gradient(135deg, #2e4f3a, #6f8f72);
+		}
+
+        /* TOP BUTTONS */
         .top-left,
         .top-right {
             position: absolute;
@@ -33,13 +35,8 @@
             z-index: 10;
         }
 
-        .top-left {
-            left: 20px;
-        }
-
-        .top-right {
-            right: 20px;
-        }
+        .top-left { left: 20px; }
+        .top-right { right: 20px; }
 
         .top-left button,
         .top-right button {
@@ -53,215 +50,189 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
-        /* Back button */
         .back-btn {
             color: white;
             background: rgba(46, 79, 58, 0.9);
         }
+
         .back-btn:hover {
             background: #3a6349;
             transform: translateY(-2px);
         }
 
-        /* Leaderboard button */
         .leaderboard-btn {
             color: #2e2e2e;
             font-weight: 800;
             background: linear-gradient(135deg, #f5d76e, #d4af37);
-
-            /* glow effect */
             box-shadow:
                 0 0 10px rgba(212, 175, 55, 0.45),
                 0 0 25px rgba(212, 175, 55, 0.25);
-
-            position: relative;
-            overflow: hidden; /* needed for shine effect */
         }
 
         .leaderboard-btn:hover {
-            background: linear-gradient(135deg, #f5d76e, #d4af37);
             transform: translateY(-2px);
             filter: brightness(1.08);
-            box-shadow:
-                0 0 14px rgba(212, 175, 55, 0.65),
-                0 0 35px rgba(212, 175, 55, 0.35);
         }
 
-        /* Shine overlay */
-        .leaderboard-btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 50%;
+        /* VIDEO CARD */
+        .video-container {
+            width: 420px;
+            background: #f5efdc;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-header {
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2e4f3a;
+            background: rgba(111, 143, 114, 0.15);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 260px;
+        }
+
+        .video-frame iframe {
+            width: 100%;
             height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255, 255, 255, 0.5),
-                transparent
-            );
-
-            transform: skewX(-20deg);
+            border: none;
         }
 
-        .leaderboard-btn:hover::before {
-            animation: shine 0.9s ease forwards;
-        }
-        @keyframes shine {
-            0% { left: -75%; }
-            100% { left: 125%; }
+        .video-container::after {
+            content: "📷";
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            font-size: 2.5rem;
+            opacity: 0.08;
+            transform: rotate(15deg);
         }
 
-        /* MAIN GAME CARD CONTAINER */
+        /* INPUT CARD */
         .play-container {
             width: 420px;
             padding: 28px;
-
             background: #f5efdc;
             border-radius: 20px;
-
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-
             position: relative;
             overflow: hidden;
         }
 
-        /* Background Decoration */
         .play-container::before {
             content: "♻";
             position: absolute;
             top: -10px;
             right: -8px;
-
             font-size: 4rem;
             color: #6f8f72;
             opacity: 0.12;
             transform: rotate(15deg);
         }
+
         .play-container::after {
             content: "🗑";
             position: absolute;
             bottom: -8px;
             left: -8px;
-
             font-size: 2.5rem;
             opacity: 0.08;
         }
 
-        /* Title */
         h2 {
             color: #2e4f3a;
             font-size: 1.5rem;
-            font-weight: 600;
             margin-bottom: 8px;
         }
 
-        /* Description text under title */
         .description {
             color: #8b7155;
             font-size: 0.9rem;
-            line-height: 1.4;
             margin-bottom: 16px;
         }
 
-        /* Input */
         textarea {
             width: 100%;
             height: 120px;
-
             padding: 12px;
-
             border: 2px solid #d8c3a5;
             border-radius: 12px;
-
-            background: white;
-
-            font-size: 0.95rem;
-            line-height: 1.5;
-
             resize: none;
             outline: none;
-
-            transition: all 0.25s ease;
         }
+
         textarea:focus {
             border-color: #6f8f72;
-            box-shadow: 0 0 0 4px rgba(111, 143, 114, 0.2);
         }
 
-        /* Send Button */
         button {
             width: 100%;
             margin-top: 14px;
             padding: 11px;
-
             border: none;
             border-radius: 12px;
-
             background: #2e4f3a;
             color: white;
-
             font-size: 0.95rem;
             font-weight: 600;
-
             cursor: pointer;
-            transition: all 0.25s ease;
         }
+
         button:hover {
             background: #3a6349;
             transform: translateY(-1px);
-        }
-        button:active {
-            transform: translateY(0);
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Back Button (top left) -->
+    <!-- TOP BUTTONS -->
     <div class="top-left">
         <button class="back-btn" onclick="location.href='index.html'">
             ← Back
         </button>
     </div>
 
-    <!-- Leaderboard Button (top right) -->
     <div class="top-right">
         <button class="leaderboard-btn" onclick="location.href='leaderboard.html'">
             🏆 Leaderboard
         </button>
     </div>
 
-    <!-- VDO.Ninja (Live camera feed) -->
-    <div class="game-area">
-        <iframe
-            src="https://vdo.ninja/?view=nydjizc"
-            width="100%"
-            height="400px"
-            style="border: none; border-radius: 12px;"
-            allow="camera; microphone; fullscreen; display-capture"
-        ></iframe>
+    <!-- VIDEO FEED -->
+    <div class="video-container">
+        <div class="video-header">📡 Live Camera Feed</div>
+        <div class="video-frame">
+            <iframe
+                src="https://vdo.ninja/?view=nydjizc"
+                allow="camera; microphone; fullscreen; display-capture">
+            </iframe>
+        </div>
     </div>
 
-    <!-- Input -->
+    <!-- INPUT CARD -->
     <div class="play-container">
         <h2>Robot Instructions</h2>
-        
+
         <p class="description">
             Enter one command at a time.
         </p>
-        
-        <textarea
-            id="playInstructions"
-            placeholder="Example:
+
+        <textarea id="playInstructions" placeholder="Example:
 moveForward(10);
 turn(90);"></textarea>
 
         <button id="instructionsInput">
             Send Instructions
         </button>
+
         <p id="message" class="description"></p>
     </div>
 
