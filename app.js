@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("loginEmail").value = "";
         document.getElementById("loginPassword").value = "";
+
+        window.location.href = "game.html";
     });
 
 
@@ -125,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("signupEmail").value = "";
         document.getElementById("signupPassword").value = "";
+
+        window.location.href = "login.html"
     });
 
 
