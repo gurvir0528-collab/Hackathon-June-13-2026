@@ -220,6 +220,23 @@
         button.leaderboard-btn:hover {
             background: linear-gradient(135deg, #f8e18c, #e5bf4f);
         }
+        
+        
+        .info-box {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: rgba(111, 143, 114, 0.12);
+            border: 1px solid rgba(111, 143, 114, 0.25);
+            border-radius: 12px;
+            color: #2e4f3a;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 4px;
+        }
     </style>
 </head>
 
@@ -260,6 +277,12 @@
         <textarea id="playInstructions" placeholder="Example:
 moveForward(10);
 turn(90);"></textarea>
+		
+        <div class="info-box">
+            <strong>Available Commands:</strong>
+            moveForward(<i>steps</i>)<br>
+            turn(<i>degrees</i>)
+        </div>
 
         <button id="instructionsInput">
             Send Instructions
@@ -267,6 +290,7 @@ turn(90);"></textarea>
 
         <p id="message" class="description"></p>
     </div>
+
 
     <script type="module" src="app.js"></script>
 
